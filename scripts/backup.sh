@@ -18,8 +18,13 @@ perform_backup() {
 	if [ $? -eq 0 ];
 	then
 		echo " Backup success !! : $(date) " >>  "$Log_File"
+		echo " *****************************************************"
+		echo "      ******************************************      "
+		echo " "
 	else
-		ecbo " Backup FAILURE !!!! : $(date) " >> "$Log_File"
+		echo " Backup FAILURE !!!! : $(date) " >> "$Log_File"
+		echo " ****************************************************** "
+		echo -e "       *************************************     \n      "
 	fi
 }
 

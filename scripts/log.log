@@ -86,3 +86,63 @@ scripts/log.log
 sent 19,583 bytes  received 1,120 bytes  8,281.20 bytes/sec
 total size is 34,220  speedup is 1.65
  Backup success !! : Sun 26 Oct 10:46:25 EEST 2025 
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ Backup FAILURE !!!! : Sun 26 Oct 11:04:41 EEST 2025 
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ Backup FAILURE !!!! : Sun 26 Oct 11:06:20 EEST 2025 
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ Backup FAILURE !!!! : Sun 26 Oct 11:07:59 EEST 2025 
+ssh: connect to host 192.168.37.127 port 22: No route to host
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(231) [sender=3.2.7]
+ Backup FAILURE !!!! : Sun 26 Oct 11:08:52 EEST 2025 
+sending incremental file list
+./
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/56/
+.git/objects/56/8abbf1c1244d188c22d3402c437345eb6b9dc8
+.git/objects/5e/
+.git/objects/5e/da6373e36a1bd1a25cb9ec1cadcba6c3e09280
+.git/objects/6f/
+.git/objects/6f/dc8485bf9d82439364b54ef8b60c404d1cbd05
+.git/objects/b3/
+.git/objects/b3/cd37a5cd641680ccfade4697dedbf86896b0ca
+.git/objects/c5/
+.git/objects/c5/c2ca3fdd2f5fd899e9080279999056a2a4ed46
+.git/objects/eb/
+.git/objects/eb/8ce141e156d726b2479e190e63a14540ff5067
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+scripts/
+scripts/backup.sh
+scripts/log.log
+
+sent 7,594 bytes  received 462 bytes  3,222.40 bytes/sec
+total size is 41,195  speedup is 5.11
+ Backup success !! : Sun 26 Oct 11:09:58 EEST 2025 
+sending incremental file list
+scripts/log.log
+
+sent 3,534 bytes  received 114 bytes  2,432.00 bytes/sec
+total size is 42,072  speedup is 11.53
+ Backup success !! : Sun 26 Oct 11:18:22 EEST 2025 
