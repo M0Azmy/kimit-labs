@@ -1,3 +1,14 @@
 # Some commands , tips and tricks , and interesting notes.
 
+# Linux related
+
+## to get the ip4 address(es)
+$ ip -o -4 a
+
+# Docker related
+
 $ docker run -d --rm -p 5000:5000 test:v1   --->  (--rm) is useful , as it deletes the exited containers automatically 
+
+## to get network info from a running container
+$ docker inspect <container_name_or_id> | grep -E -i "Network|IPAddress|Gateway"
+
