@@ -1,12 +1,8 @@
+# Optimize stage 2
+# considering security , created non-root user
+# considering --cache
+
 FROM python:3.9.25-alpine3.22
-
-# RUN adduser -D myuser && \
- #    mkdir /home/myuser/app && \
-  #  chown -R myuser /home/myuser / && \
-   # chmod -R 755 /home/myuser /
-# USER myuser
-# WORKDIR /app
-
 
 # Create the user and home directory, set permissions
 RUN adduser -D myuser && \
