@@ -1,0 +1,15 @@
+FROM python:3.9.25-alpine3.22
+
+WORKDIR /app
+
+COPY requirments.txt .
+
+RUN pip install -r requirments.txt
+
+COPY . .    
+
+EXPOSE 5000
+
+CMD ["python", "flask-app.py"]
+
+# Estimated size for this image is 1.01GB
