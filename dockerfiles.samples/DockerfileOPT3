@@ -1,20 +1,7 @@
+# Optimization 3rd stage ( final )
+# utilizing the "multi-stage" build
+
 FROM python:3.9.25-alpine3.22 AS stage
-
-# RUN adduser -D myuser && \
- #    mkdir /home/myuser/app && \
-  #  chown -R myuser /home/myuser / && \
-   # chmod -R 755 /home/myuser /
-# USER myuser
-# WORKDIR /app
-
-
-# Create the user and home directory, set permissions
-# RUN adduser -D myuser && \
-#     mkdir -p /home/myuser && \
-#     chown myuser:myuser /home/myuser
-
-# USER myuser
-# WORKDIR /app
 
 WORKDIR /app
 
@@ -38,6 +25,5 @@ COPY . .
 
 EXPOSE 5000
 CMD [ "python", "flask-app.py" ]
-# Estimated size for this image is 123MB
 
 
