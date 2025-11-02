@@ -12,4 +12,4 @@ EXPOSE 5000
 
 CMD ["python", "flask-app.py"]
 
-# Estimated size for this image is 1.01GB
+# image size ---> 1.1 GB
