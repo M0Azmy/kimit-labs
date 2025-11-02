@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 5000
 CMD [ "python", "flask-app.py" ]
 
-
+# image size ---> 51.9 MB
