@@ -1,0 +1,41 @@
+Hello!
+
+Here is a simple summary of what I did to get your application running, along with the main commands you need.
+
+### What I Did (The Simple Version)
+
+1.  **Figured out Redis was missing:** The application needed a Redis database to work, but it couldn't find one. This was causing it to crash.
+
+2.  **Created a private network:** I made a private network just for our Docker containers. This lets them talk to each other easily and securely.
+
+3.  **Launched a Redis container:** I started a new Redis database inside its own container and connected it to our private network.
+
+4.  **Connected your app:** I started your application in its container and connected it to the same network. I told it to find the Redis database by its container name (`redis-server`).
+
+Now, your app and the Redis database are running as two connected services!
+
+### Main Commands to Run Everything
+
+Here are the commands to build and run the application from scratch:
+
+1.  **Build the application image:**
+    ```bash
+    docker build -t ai:v1 .
+    ```
+
+2.  **Create the Docker network (only needs to be done once):**
+    ```bash
+    docker network create my-app-network
+    ```
+
+3.  **Start the Redis container:**
+    ```bash
+    docker run -d --name redis-server --network my-app-network redis:alpine
+    ```
+
+4.  **Start the application container:**
+    ```bash
+    docker run -d -p 8000:8000 --name ai_app --network my-app-network --env-file .env -e REDIS_HOST=redis-server ai:v1
+    ```
+
+After running these commands, the application will be available at **http://localhost:8000**.
