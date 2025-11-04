@@ -1,8 +1,9 @@
 Task 1 :
 
 1-
-
-***********Output of the docker network ls and docker network inspect assignment-bridge commands.**********
+##########################################################################################################
+        Output of the docker network ls and docker network inspect assignment-bridge commands
+##########################################################################################################
 
 ```
 $ docker network create assignment-bridge
@@ -36,7 +37,12 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 3b62eda83a05   busybox:latest               "sleep 3600"             6 seconds ago        Up 5 seconds                                                    practical_volhard
 
 
-****************************** Ping results between containers for Task 3 ********************************
+
+
+##########################################################################################################
+                     Ping results between containers for Task 3 
+##########################################################################################################
+
 Task 3:
 ```
 $ docker exec -it practical_volhard ping recursing_hypatia
@@ -60,7 +66,11 @@ b9a4bb4f6532   nginx:alpine                 "/docker-entrypoint.…"   21 second
 $ docker exec -it contaier3 ping practical_volhard
 ping: bad address 'practical_volhard'
 
-****************************** Explanation for the behavior observed in Task 4.******************************
+
+
+##########################################################################################################
+                          Explanation for the behavior observed in Task 4
+##########################################################################################################
 ```
 It failed because they are on a different network, and no DNS in default network
 ```
@@ -70,7 +80,11 @@ Task 5:
 $ docker network connect assignment-bridge contaier3 
 
 
-****************************** Ping results between containers for Task 5. ********************************
+
+##########################################################################################################
+                        Ping results between containers for Task 5
+##########################################################################################################
+
 $ docker exec -it contaier3 ping practical_volhard
 PING practical_volhard (172.19.0.4): 56 data bytes
 64 bytes from 172.19.0.4: seq=0 ttl=64 time=0.079 ms
@@ -96,10 +110,10 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 $ docker network rm assignment-bridge 
 assignment-bridge
 
-**********************************************************
-**********************************************************
 
-********************************************************** Bonus Task **********************************************************
+##########################################################################################################
+############################          Bonus Task                 #########################################
+##########################################################################################################
 
 ~/kimit/kimit-labs/dockerlab4.4$ docker exec -it 
 dockerlab44-nginx-1    dockerlab44-sleeper-1  it-tools               
@@ -126,7 +140,7 @@ NETWORK ID     NAME                             DRIVER    SCOPE
 d9745dcfb96a   dockerlab44_assignment-network   bridge    local
 
 
-**** Docker compose file ****
+#################################################### Docker compose file  --->
 services:
     nginx:
         image: nginx:alpine
