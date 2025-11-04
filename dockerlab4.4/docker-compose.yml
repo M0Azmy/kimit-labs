@@ -1,0 +1,15 @@
+services:
+    nginx:
+        image: nginx:alpine
+        networks:
+            - assignment-network
+    
+    sleeper:
+        image: busybox
+        command: ["sleep", "3600"]
+        networks:
+            - assignment-network    
+networks:
+    assignment-network:
+        driver: bridge
+

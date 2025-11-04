@@ -118,3 +118,46 @@ assignment-bridge
 **********************************************************
 **********************************************************
 
+Bonus Task :
+
+~/kimit/kimit-labs/dockerlab4.4$ docker exec -it 
+dockerlab44-nginx-1    dockerlab44-sleeper-1  it-tools               
+hol@hol-Virtual-Machine:~/kimit/kimit-labs/dockerlab4.4$ docker exec -it dockerlab44-sleeper-1 sh
+/ # ping 
+.dockerenv  dev/        home/       lib64/      root/       tmp/        var/
+bin/        etc/        lib/        proc/       sys/        usr/
+/ # ping dockerlab44-nginx-1
+PING dockerlab44-nginx-1 (172.19.0.3): 56 data bytes
+64 bytes from 172.19.0.3: seq=0 ttl=64 time=0.145 ms
+64 bytes from 172.19.0.3: seq=1 ttl=64 time=0.077 ms
+64 bytes from 172.19.0.3: seq=2 ttl=64 time=0.075 ms
+64 bytes from 172.19.0.3: seq=3 ttl=64 time=0.072 ms
+
+
+:~/kimit/kimit-labs/dockerlab4.4$ docker ps
+CONTAINER ID   IMAGE                        COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+23d44d563911   nginx:alpine                 "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   80/tcp                                      dockerlab44-nginx-1
+3405ac9afa95   busybox                      "sleep 3600"             2 minutes ago   Up 2 minutes                                               dockerlab44-sleeper-1
+32ae37dbe769   corentinth/it-tools:latest   "/docker-entrypoint.…"   13 months ago   Up 6 days      0.0.0.0:30030->80/tcp, [::]:30030->80/tcp   it-tools
+hol@hol-Virtual-Machine:~/kimit/kimit-labs/dockerlab4.4$ docker network ls
+NETWORK ID     NAME                             DRIVER    SCOPE
+1a8332e5859d   bridge                           bridge    local
+d9745dcfb96a   dockerlab44_assignment-network   bridge    local
+
+
+**** Docker compose file ****
+services:
+    nginx:
+        image: nginx:alpine
+        networks:
+            - assignment-network
+    
+    sleeper:
+        image: busybox
+        command: ["sleep", "3600"]
+        networks:
+            - assignment-network    
+networks:
+    assignment-network:
+        driver: bridge
+
