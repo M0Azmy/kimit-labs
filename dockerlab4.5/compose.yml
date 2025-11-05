@@ -1,0 +1,15 @@
+services:
+  app:
+    build: ./app
+    ports:
+      - "4000:3000"
+
+    volumes:
+      - ./app:/usr/src/app
+
+  web:
+    image: nginx:latest
+    ports:
+      - "5000:80"
+    depends_on:
+      - app
