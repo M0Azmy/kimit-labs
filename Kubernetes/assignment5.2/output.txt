@@ -1,0 +1,34 @@
+$ kubectl get all
+
+NAME                          READY   STATUS    RESTARTS      AGE
+pod/busybox-daemonset-k2lhv   1/1     Running   3 (19s ago)   119s
+pod/busybox-daemonset-shhcb   1/1     Running   0             119s
+pod/httpd-599bf897b4-5mgxj    1/1     Running   1 (18m ago)   21m
+pod/httpd-599bf897b4-j62x6    1/1     Running   1 (18m ago)   21m
+pod/nginx-2lkcg               1/1     Running   1 (18m ago)   58m
+pod/nginx-ftwqm               1/1     Running   1 (18m ago)   58m
+pod/nginx-j9ghg               1/1     Running   1 (18m ago)   60m
+pod/nginx-nzrf7               1/1     Running   1 (18m ago)   66m
+pod/nginx-q9klw               1/1     Running   1 (18m ago)   66m
+pod/nginx-shq28               1/1     Running   1 (18m ago)   60m
+pod/nginx-tldb5               1/1     Running   1 (18m ago)   66m
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   67m
+
+NAME                               DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/busybox-daemonset   2         2         2       2            2           <none>          119s
+
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/httpd   2/2     2            2           24m
+
+NAME                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/httpd-599bf897b4   2         2         2       24m
+replicaset.apps/nginx              7         7         7       66m
+
+----------------------------------------------------------------------------------------------------------
+
+$ kubectl get pods -o wide
+NAME                      READY   STATUS    RESTARTS      AGE     IP            NODE           NOMINATED NODE   READINESS GATES
+busybox-daemonset-k2lhv   1/1     Running   5 (66s ago)   3m51s   <none>        minikube-m02   <none>           <none>
+busybox-daemonset-shhcb   1/1     Running   0             3m51s   10.244.0.30   minikube       <none>           <none>

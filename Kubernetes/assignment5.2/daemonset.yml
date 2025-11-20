@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: busybox-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: busybox-daemonset
+  template:
+    metadata:
+      labels:
+        app: busybox-daemonset
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["sh", "-c", "sleep 3600"]
