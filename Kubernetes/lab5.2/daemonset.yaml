@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: logging-agent
+
+
+  template:
+    metadata:
+      labels:
+        app: logging-agent
+
+
+  
+  
+    spec:
+      containers:
+      - name: fluentd
+        image: fluentd:v1.18.0-debian-1.0
+        resources:
+          limits:
+            memory: "200Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      tolerations:
+      - key: "app"
+        operator: "Equal"
+        value: "logging"
+        effect: "NoSchedule"
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      nodeSelector:
+        environment: production  # Schedule only on nodes with this label
+
