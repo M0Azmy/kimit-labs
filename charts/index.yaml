@@ -3,7 +3,7 @@ entries:
   nodeport-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-12-11T13:42:13.881249468+02:00"
+    created: "2025-12-11T13:44:50.445850381+02:00"
     description: A Helm chart for Kubernetes 5.5 assignment
     digest: 445c81fcda75e6b3aebacb1734e98d0f70531080defa38e347860e22af956d8f
     name: nodeport-service
@@ -11,4 +11,4 @@ entries:
     urls:
     - https://m0azmy.github.io/kimit-labs/charts/nodeport-service-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-11T13:42:13.880193805+02:00"
+generated: "2025-12-11T13:44:50.445360366+02:00"
