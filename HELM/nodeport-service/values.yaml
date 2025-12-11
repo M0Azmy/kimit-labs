@@ -1,0 +1,53 @@
+
+# -- Number of replicas for the Deployment
+replicaCount: 2
+
+# -- Container image 
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+# -- Container port
+containerPort: 80
+
+# -- Service configuration
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+###############################################################################################
+
+# delte below, dry run tests only=================
+# fullnameOverride: beta
+
+
+
+serviceAccount:
+  create: false
+
+
+
+autoscaling:
+  enabled: false      # default: no HPA; deployment sets replicas from replicaCount
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+
+
+# values.yaml
+httpRoute:
+  enabled: false
+
+
+ingress:
+  enabled: false
+
+
+httpRoute:
+  enabled: false
+autoscaling:
+  enabled: false
+serviceAccount:
+  create: false
